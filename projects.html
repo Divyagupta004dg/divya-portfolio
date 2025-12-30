@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Projects | Divya Gupta</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">Divya.</a>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+  </nav>
+</header>
+
+<section class="projects" style="padding-top:14rem">
+
+  <div class="projects-header">
+    <h2>All Projects</h2>
+    <p>Complete RTL & VLSI project portfolio</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- UART -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front" onclick="flipCard(this)">
+          <h3>UART TX / RX</h3>
+          <p>FIFO-Based Communication</p>
+        </div>
+
+        <div class="flip-back">
+          <button class="close" onclick="flipBack(this)">✕</button>
+          <p>UART with FIFO buffering.</p>
+
+          <a href="https://github.com/Divyagupta004dg/AXI-Lite-Slave-with-FIFO-and-UART-Transmitter"
+             target="_blank" class="github-btn">
+            GitHub →
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RISC-V -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front" onclick="flipCard(this)">
+          <h3>RISC-V Crypto SoC</h3>
+          <p>Secure IoT Architecture</p>
+        </div>
+
+        <div class="flip-back">
+          <button class="close" onclick="flipBack(this)">✕</button>
+
+          <p>RISC-V core with cryptographic modules.</p>
+
+          <a href="https://github.com/Divyagupta004dg/RISCV-iot-crypto-Soc"
+             target="_blank" class="github-btn">
+            GitHub →
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🔥 BARREL SHIFTER (NOW APPEARS HERE) -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front" onclick="flipCard(this)">
+          <div class="icon-circle">⇄</div>
+          <h3>Barrel Shifter</h3>
+          <p>High-Speed Bit Manipulation</p>
+
+          <div class="tags">
+            <span>Verilog</span>
+            <span>Combinational</span>
+          </div>
+        </div>
+
+        <div class="flip-back">
+          <button class="close" onclick="flipBack(this)">✕</button>
+
+          <p>
+            Single-cycle multi-bit barrel shifter
+            supporting logical & arithmetic shifts.
+          </p>
+
+          <a href="https://github.com/Divyagupta004dg/barrel_shifter_project"
+             target="_blank" class="github-btn">
+            GitHub →
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function flipCard(el) {
+  el.closest(".flip-card").classList.add("flipped");
+}
+
+function flipBack(el) {
+  el.closest(".flip-card").classList.remove("flipped");
+}
+</script>
+
+</body>
+<!-- 🔹 CMOS INVERTER PROJECT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Projects | Divya Gupta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">Divya.</a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+    </nav>
+</header>
+
+<section class="projects">
+
+    <div class="projects-header">
+        <h2>All Projects</h2>
+        <p>Complete RTL & VLSI project portfolio</p>
+    </div>
+
+    <div class="projects-grid">
+
+        <!-- UART -->
+        <!-- (paste your UART flip-card here) -->
+
+        <!-- RISC-V -->
+        <!-- (paste your RISC-V flip-card here) -->
+
+        <!-- IC Packaging -->
+        <!-- (paste IC Packaging flip-card here) -->
+
+        <!-- Barrel Shifter -->
+        <!-- (paste Barrel Shifter flip-card here) -->
+
+        <!-- ✅ CMOS INVERTER -->
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+                <div class="flip-front" onclick="flipCard(this)">
+
+                    <a href="https://github.com/Divyagupta004dg/CMOS_INVERTER_PROJECT"
+                       target="_blank"
+                       class="github-icon"
+                       onclick="event.stopPropagation()">
+                        <i class="bx bxl-github"></i>
+                    </a>
+
+                    <svg viewBox="0 0 120 120" class="cmos-svg">
+                        <line x1="5" y1="60" x2="30" y2="60"/>
+                        <path d="M30 35 L30 85 L70 60 Z"/>
+                        <circle cx="75" cy="60" r="5"/>
+                        <line x1="80" y1="60" x2="115" y2="60"/>
+                        <line x1="50" y1="10" x2="50" y2="35"/>
+                        <line x1="50" y1="85" x2="50" y2="110"/>
+                    </svg>
+
+                    <h3>CMOS</h3>
+                    <h3>INVERTER</h3>
+
+                    <p>Transistor-Level Logic Gate</p>
+
+                    <div class="tags">
+                        <span>PMOS</span>
+                        <span>NMOS</span>
+                        <span>SPICE</span>
+                    </div>
+
+                    <small>Click to view details ⚡</small>
+                </div>
+
+                <!-- BACK -->
+                <div class="flip-back">
+
+                    <button class="close" onclick="flipBack(this)">✕</button>
+
+                    <a href="https://github.com/Divyagupta004dg/CMOS_INVERTER_PROJECT"
+                       target="_blank"
+                       class="github-icon">
+                        <i class="bx bxl-github"></i>
+                    </a>
+
+                    <h4>Project Details</h4>
+
+                    <p>
+                        CMOS inverter designed at transistor level with PMOS/NMOS sizing,
+                        SPICE simulation, power-delay analysis, and layout verification.
+                    </p>
+
+                    <ul>
+                        <li>DC & transient simulation</li>
+                        <li>Power-delay tradeoff</li>
+                        <li>CMOS sizing optimization</li>
+                        <li>DRC & LVS clean</li>
+                    </ul>
+
+                    <a href="https://github.com/Divyagupta004dg/CMOS_INVERTER_PROJECT"
+                       target="_blank"
+                       class="github-btn">
+                        View on GitHub →
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function flipCard(el) {
+    el.closest(".flip-card").classList.add("flipped");
+}
+
+function flipBack(el) {
+    el.closest(".flip-card").classList.remove("flipped");
+}
+</script>
+
+</body>
+
+
+</html>
