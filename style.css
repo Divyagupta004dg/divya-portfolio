@@ -74,6 +74,7 @@ section {
 }
 
 /* ================= HOME ================= */
+
 .home {
     display: flex;
     align-items: center;
@@ -82,6 +83,7 @@ section {
     background: var(--bg-color);
 }
 
+/* ===== LEFT CONTENT ===== */
 .home-content {
     max-width: 60rem;
 }
@@ -96,36 +98,42 @@ section {
     color: var(--main-color);
 }
 
-.text-animate h3 {
+/* ===== TYPING TEXT (NEW SYSTEM) ===== */
+.typing-wrapper {
     font-size: 3.2rem;
     font-weight: 700;
-}
-
-.multiple-text {
+    margin: 1rem 0 2rem;
     color: var(--main-color);
+    display: flex;
+    align-items: center;
 }
 
-.multiple-text::after {
-    content: '|';
+#typing-text {
+    white-space: nowrap;
+}
+
+.cursor {
     margin-left: 6px;
     animation: blink 1s infinite;
 }
 
+/* cursor blink */
 @keyframes blink {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0; }
 }
 
+/* ===== PARAGRAPH ===== */
 .home-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
 
-/* ===== BUTTONS (STABLE) ===== */
+/* ===== BUTTONS ===== */
 .btn-box {
     display: flex;
     gap: 2rem;
-    margin-bottom: 3rem;   /* 🔒 LOCKS ICON POSITION */
+    margin-bottom: 3rem;
 }
 
 .btn-box .btn {
@@ -141,14 +149,12 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: .5s;
-}
-/* ===== BUTTON ANIMATION (RESTORED) ===== */
-.btn-box .btn {
+    transition: .4s;
     position: relative;
     overflow: hidden;
 }
 
+/* hover animation */
 .btn-box .btn::before {
     content: '';
     position: absolute;
@@ -168,12 +174,13 @@ section {
     color: var(--main-color);
 }
 
-.btn-box .btn:nth-child(2) {
+/* outline button */
+.btn-box .btn.btn-outline {
     background: transparent;
     color: var(--main-color);
 }
 
-.btn-box .btn:nth-child(2):hover {
+.btn-box .btn.btn-outline:hover {
     background: var(--main-color);
     color: var(--bg-color);
 }
@@ -568,24 +575,9 @@ section {
 }*/
 .projects {
   padding: 8rem 9%;
-  background:
-    radial-gradient(circle at top, rgba(0,171,240,0.15), transparent 60%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.03) 0,
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.03) 0,
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    #081b29;
+  background: transparent; /* 🔑 important */
 }
+
 
 .projects-header {
     text-align: center;
@@ -1100,7 +1092,7 @@ section {
 .progress-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    gap: 7rem;
     margin-bottom: 6rem;
 }
 
@@ -1146,6 +1138,12 @@ section {
     border-radius: 18px;
     background: #fff;
 }
+.notion-progress {
+  margin-top: 4rem;
+  padding: 2rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -1174,4 +1172,200 @@ section {
     max-width: 420px;
     border-radius: 12px;
     background: #020617;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #020617;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+
+/* ================= VLSI BACKGROUND ================= */
+
+#vlsi-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    ellipse at top,
+    #0b1220 0%,
+    #020617 75%
+  );
+  overflow: hidden;
+}
+#vlsi-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(34,197,94,0.03) 0,
+      rgba(34,197,94,0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(34,197,94,0.02) 0,
+      rgba(34,197,94,0.02) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  pointer-events: none;
+}
+
+
+/* ================= GRADIENT ORBS ================= */
+
+.gradient-orb {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.8;
+  animation: orbPulse 6s ease-in-out infinite;
+}
+
+.orb-1 {
+  top: 20%;
+  left: 20%;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.orb-2 {
+  bottom: 20%;
+  right: 20%;
+  background: rgba(147, 51, 234, 0.12);
+  animation-delay: 3s;
+}
+
+@keyframes orbPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* ================= PARTICLES ================= */
+
+#particles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+
+/* ================= CHIP ================= */
+
+.chip {
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+
+.chip-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.25),
+    rgba(168, 85, 247, 0.25)
+  );
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 2px;
+  position: relative;
+}
+
+.chip-die {
+  position: absolute;
+  inset: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.25),
+    rgba(96, 165, 250, 0.25)
+  );
+  border-radius: 2px;
+}
+
+/* ================= BINARY TEXT ================= */
+
+.binary-text {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(96, 165, 250, 0.28);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ================= SVG ELEMENTS ================= */
+
+svg {
+  overflow: visible;
+}
+
+/* ================= CURSOR GLOW ================= */
+#mouse-glow-large,
+#mouse-glow-small {
+  mix-blend-mode: screen;
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+#mouse-glow-large {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.18) 0%,
+    rgba(34, 197, 94, 0.08) 35%,
+    rgba(34, 197, 94, 0.03) 55%,
+    transparent 70%
+  );
+  filter: blur(55px);
+}
+
+#mouse-glow-small {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.25) 0%,
+    rgba(34, 197, 94, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(35px);
+}
+
+/* ================= FLOAT ANIMATION ================= */
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8px, -12px) rotate(2deg);
+  }
+  50% {
+    transform: translate(-8px, -6px) rotate(-2deg);
+  }
+  75% {
+    transform: translate(4px, -10px) rotate(1deg);
+  }
 }

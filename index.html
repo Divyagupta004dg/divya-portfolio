@@ -30,53 +30,49 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- ================= HOME ================= -->
-    <section class="home" id="home">
+   
 
-        <div class="home-content">
-            <h1>Hello, I'm <span>Divya Gupta</span></h1>
+        <!-- HOME  -->
+<div class="home-content">
+    <h1>Hello, I'm <span>Divya Gupta</span></h1>
 
-            <div class="text-animate">
-                <h3><span class="multiple-text"></span></h3>
-            </div>
+    <!-- ✅ TYPING TEXT -->
+    <p class="typing-wrapper">
+        <span id="typing-text"></span><span class="cursor">|</span>
+    </p>
 
-            <p>
-                Passionate about Verilog, RTL Design, FPGA, and full RTL-to-GDS flow.
-                Focused on building strong digital design and semiconductor fundamentals.
-            </p>
+    <p>
+        Passionate about Verilog, RTL Design, FPGA, and full RTL-to-GDS flow.
+        Focused on building strong digital design and semiconductor fundamentals.
+    </p>
 
-            <div class="btn-box">
-                <a href="#contact" class="btn">Hire Me</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
-            </div>
+    <div class="btn-box">
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="#contact" class="btn btn-outline">Let's Talk</a>
+    </div>
 
-            <!-- 🔒 SOCIAL ICONS (LOCKED BELOW) -->
-            <div class="home-sci">
-                <a href="https://github.com/Divyagupta004dg" target="_blank">
-                    <i class="bx bxl-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/divya-gupta-a4551a331/" target="_blank">
-                    <i class="bx bxl-linkedin"></i>
-                </a>
-                <a href="mailto:divyagupta004dg@gmail.com">
-                    <i class="bx bx-envelope"></i>
-                </a>
-            </div>
-        </div>
+    <div class="home-sci">
+        <a href="https://github.com/Divyagupta004dg" target="_blank">
+            <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/divya-gupta-a4551a331/" target="_blank">
+            <i class="bx bxl-linkedin"></i>
+        </a>
+        <a href="mailto:divyagupta004dg@gmail.com">
+            <i class="bx bx-envelope"></i>
+        </a>
+    </div>
+</div>
 
-        <!-- HOME IMAGE -->
-        <div class="home-image">
-            <img src="images/black.png" alt="Divya Gupta">
-        </div>
-
-    </section>
+<div class="home-image">
+    <img src="images/black.png" alt="Divya Gupta">
+</div>
 
     <!-- ================= ABOUT ================= -->
     <section class="about" id="about">
@@ -162,27 +158,54 @@
 
 </div>
 </section>
-    <!-- ================= PROJECTS ================= -->
-   <section class="projects" id="projects">
+
+ <!-- ===== PROJECTS BACKGROUND ===== -->
+    <div id="vlsi-background">
+        <!-- Animated gradient orbs -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+
+        <!-- Particles container -->
+        <div id="particles-container"></div>
+
+        <!-- Mouse glow effects -->
+        <div id="mouse-glow-large"></div>
+        <div id="mouse-glow-small"></div>
+    </div>
+<!-- ================= PROJECTS ================= -->
+<section class="projects-bg" id="projects">
+
+  <!-- ===== VLSI BACKGROUND (ONLY THIS) ===== -->
+  <div id="vlsi-background">
+    <div class="vlsi-orb orb-blue"></div>
+    <div class="vlsi-orb orb-purple"></div>
+
+    <div id="particles-container"></div>
+
+    <div id="mouse-glow-large"></div>
+    <div id="mouse-glow-small"></div>
+  </div>
+
+  <!-- ===== PROJECT CONTENT ===== -->
+  <div class="projects">
 
     <div class="projects-header">
-        <span class="pill">Work</span>
-        <h2>Featured Projects</h2>
-        <p>Selected RTL & VLSI projects with real hardware focus.</p>
-
-        <a href="projects.html" class="view-all-btn">
-            View All →
-        </a>
+      <span class="pill">Work</span>
+      <h2>Featured Projects</h2>
+      <p>Selected RTL & VLSI projects with real hardware focus.</p>
+      <a href="projects.html" class="view-all-btn">View All →</a>
     </div>
 
     <div class="projects-grid">
+  
 
-        <!-- PROJECT 1 -->
-        <div class="flip-card">
-    <div class="flip-inner">
 
-        <!-- FRONT -->
-        <div class="flip-front" onclick="flipCard(this)">
+      <!-- ================= PROJECT 1 ================= -->
+      <div class="flip-card">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" onclick="flipCard(this)">
             <a
               href="https://github.com/Divyagupta004dg/AXI-Lite-Slave-with-FIFO-and-UART-Transmitter"
               target="_blank"
@@ -195,16 +218,16 @@
             <p>FIFO-Based Serial Communication</p>
 
             <div class="tags">
-                <span>Verilog</span>
-                <span>UART</span>
-                <span>FIFO</span>
+              <span>Verilog</span>
+              <span>UART</span>
+              <span>FIFO</span>
             </div>
 
             <small>Click to view details ⚡</small>
-        </div>
+          </div>
 
-        <!-- BACK -->
-        <div class="flip-back">
+          <!-- BACK -->
+          <div class="flip-back">
             <button class="close" onclick="flipBack(this)">✕</button>
 
             <a
@@ -217,154 +240,139 @@
             <h4>Project Details</h4>
 
             <p>
-                UART implementation with FIFO buffering for reliable
-                serial communication in FPGA systems.
+              UART implementation with FIFO buffering for reliable
+              serial communication in FPGA systems.
             </p>
 
             <ul>
-                <li>Configurable baud rate</li>
-                <li>TX/RX FIFO buffers</li>
-                <li>Parity & framing checks</li>
+              <li>Configurable baud rate</li>
+              <li>TX/RX FIFO buffers</li>
+              <li>Parity & framing checks</li>
             </ul>
+          </div>
+
         </div>
-
-    </div>
-</div>
-
-
-        <!-- PROJECT 2 -->
-         <!-- PROJECT: RISC-V IoT Crypto SoC -->
-<div class="flip-card">
-  <div class="flip-inner">
-
-    <!-- FRONT -->
-    <div class="flip-front" onclick="flipCard(this)">
-
-      <!-- GitHub Icon -->
-      <a href="https://github.com/Divyagupta004dg/RISCV-iot-crypto-Soc"
-         target="_blank"
-         class="github-icon"
-         onclick="event.stopPropagation()">
-        <i class="bx bxl-github"></i>
-      </a>
-
-      <!-- ICON -->
-      <div class="shield-icon">
-        🔐
       </div>
 
-      <h3>RISC-V IoT</h3>
-      <h3>Crypto SoC</h3>
+      <!-- ================= PROJECT 2 ================= -->
+      <div class="flip-card">
+        <div class="flip-inner">
 
-      <p>Secure System-on-Chip Architecture</p>
+          <!-- FRONT -->
+          <div class="flip-front" onclick="flipCard(this)">
+            <a
+              href="https://github.com/Divyagupta004dg/RISCV-iot-crypto-Soc"
+              target="_blank"
+              class="github-icon"
+              onclick="event.stopPropagation()">
+              <i class="bx bxl-github"></i>
+            </a>
 
-      <div class="tags">
-        <span>RISC-V</span>
-        <span>Cryptography</span>
-        <span>IoT</span>
-      </div>
+            <div class="shield-icon">🔐</div>
 
-      <small>Click to view details ⚡</small>
-    </div>
+            <h3>RISC-V IoT</h3>
+            <h3>Crypto SoC</h3>
 
-    <!-- BACK -->
-    <div class="flip-back">
+            <p>Secure System-on-Chip Architecture</p>
 
-      <button class="close" onclick="flipBack(this)">✕</button>
+            <div class="tags">
+              <span>RISC-V</span>
+              <span>Cryptography</span>
+              <span>IoT</span>
+            </div>
 
-      <!-- GitHub Icon -->
-      <a href="https://github.com/Divyagupta004dg/RISCV-iot-crypto-Soc"
-         target="_blank"
-         class="github-icon">
-        <i class="bx bxl-github"></i>
-      </a>
+            <small>Click to view details ⚡</small>
+          </div>
 
-      <h4>Project Details</h4>
+          <!-- BACK -->
+          <div class="flip-back">
+            <button class="close" onclick="flipBack(this)">✕</button>
 
-      <p>
-        Secure RISC-V based IoT System-on-Chip integrating
-        cryptographic accelerators for edge devices.
-      </p>
+            <a
+              href="https://github.com/Divyagupta004dg/RISCV-iot-crypto-Soc"
+              target="_blank"
+              class="github-icon">
+              <i class="bx bxl-github"></i>
+            </a>
 
-      <ul>
-        <li>RV32I RISC-V Core</li>
-        <li>AES Cryptographic Engine</li>
-        <li>Secure Boot Flow</li>
-        <li>IoT Peripheral Interfaces</li>
-      </ul>
+            <h4>Project Details</h4>
 
-    </div>
+            <p>
+              Secure RISC-V based IoT System-on-Chip integrating
+              cryptographic accelerators for edge devices.
+            </p>
 
-  </div>
-</div>
+            <ul>
+              <li>RV32I RISC-V Core</li>
+              <li>AES Cryptographic Engine</li>
+              <li>Secure Boot Flow</li>
+              <li>IoT Peripheral Interfaces</li>
+            </ul>
+          </div>
 
-        <!-- PROJECT 3 -->
-         <!-- PROJECT: IC Packaging & Testing -->
-<div class="flip-card">
-  <div class="flip-inner">
-
-    <!-- FRONT -->
-    <div class="flip-front packaging" onclick="flipCard(this)">
-
-      <!-- CHIP -->
-      <div class="chip">
-
-        <!-- PINS -->
-        <div class="pins top"></div>
-        <div class="pins bottom"></div>
-        <div class="pins left"></div>
-        <div class="pins right"></div>
-
-        <!-- INNER DIE -->
-        <div class="chip-die">
-          <span>SILICON<br>DIE</span>
         </div>
-
-        <div class="chip-label">QFP-64</div>
       </div>
 
-      <h3>IC Packaging</h3>
-      <p>Backend VLSI & Testing</p>
+      <!-- ================= PROJECT 3 ================= -->
+      <div class="flip-card">
+        <div class="flip-inner">
 
-      <small>Click to view details ⚡</small>
+          <!-- FRONT -->
+          <div class="flip-front packaging" onclick="flipCard(this)">
+
+            <div class="chip">
+              <div class="pins top"></div>
+              <div class="pins bottom"></div>
+              <div class="pins left"></div>
+              <div class="pins right"></div>
+
+              <div class="chip-die">
+                <span>SILICON<br>DIE</span>
+              </div>
+
+              <div class="chip-label">QFP-64</div>
+            </div>
+
+            <h3>IC Packaging</h3>
+            <p>Backend VLSI & Testing</p>
+
+            <small>Click to view details ⚡</small>
+          </div>
+
+          <!-- BACK -->
+          <div class="flip-back">
+            <button class="close" onclick="flipBack(this)">✕</button>
+
+            <h4>Project Details</h4>
+
+            <p>
+              Practical IC packaging and testing workflow including die handling,
+              wire bonding, package assembly, and post-silicon validation.
+            </p>
+
+            <ul>
+              <li>QFP-64 package understanding</li>
+              <li>Wire bonding & assembly flow</li>
+              <li>Functional & parametric testing</li>
+              <li>Reliability & QA checks</li>
+            </ul>
+
+            <a
+              href="https://github.com/Divyagupta004dg/packaging_testing"
+              target="_blank"
+              class="github-btn">
+              GitHub →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-
-    <!-- BACK -->
-    <div class="flip-back">
-
-      <button class="close" onclick="flipBack(this)">✕</button>
-
-      <h4>Project Details</h4>
-
-      <p>
-        Practical IC packaging and testing workflow including die handling,
-        wire bonding, package assembly, and post-silicon validation.
-      </p>
-
-      <ul>
-        <li>QFP-64 package understanding</li>
-        <li>Wire bonding & assembly flow</li>
-        <li>Functional & parametric testing</li>
-        <li>Reliability & QA checks</li>
-      </ul>
-
-      <a
-        href="https://github.com/Divyagupta004dg/packaging_testing"
-        target="_blank"
-        class="github-btn">
-        GitHub →
-      </a>
-
-    </div>
-
   </div>
-</div>
-
-        <!-- (Same structure, different content) -->
-    
-  
 </section>
-  <!-- (ENGINEERR PROGRESSSt) -->
+
+<!-- ================= ENGINEERING PROGRESS ================= -->
 <section class="engineering-progress" id="progress">
 
   <div class="progress-header">
@@ -375,7 +383,6 @@
 
   <div class="progress-grid">
 
-    <!-- GitHub Stats -->
     <div class="progress-card">
       <h3>GitHub Stats</h3>
       <img
@@ -385,22 +392,11 @@
       />
     </div>
 
-    <!-- Contribution Streak -->
     <div class="progress-card">
       <h3>Contribution Streak</h3>
       <img
         src="https://nirzak-streak-stats.vercel.app/?user=Divyagupta004dg&theme=dark&hide_border=false"
         alt="GitHub Streak"
-        referrerpolicy="no-referrer"
-      />
-    </div>
-
-    <!-- Top Languages -->
-    <div class="progress-card">
-      <h3>Top Languages</h3>
-      <img
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Divyagupta004dg&theme=dark&hide_border=false&layout=compact"
-        alt="Top Languages"
         referrerpolicy="no-referrer"
       />
     </div>
@@ -477,7 +473,43 @@ function flipBack(el) {
 
 </body>
 
+<section class="progress-section">
+  <h2>Engineering Progress</h2>
+  <p>Live GitHub activity and development consistency.</p>
 
+  <div class="progress-grid">
+
+    <!-- GitHub Stats -->
+    <div class="progress-card">
+      <h3>GitHub Stats</h3>
+      <img
+        src="https://github-readme-stats.vercel.app/api?username=Divyagupta004dg&theme=dark&hide_border=true&include_all_commits=true"
+        alt="GitHub Stats"
+      >
+    </div>
+
+    <!-- Contribution Graph -->
+    <div class="progress-card">
+      <h3>Contribution Activity</h3>
+      <img
+        src="https://github-readme-activity-graph.vercel.app/graph?username=Divyagupta004dg&theme=github-dark&hide_border=true"
+        alt="GitHub Contribution Graph"
+      >
+    </div>
+
+  </div>
+
+<section class="notion-progress">
+  <h3>Learning & Project Timeline</h3>
+
+  <iframe
+    src="https://bittersweet-psychology-078.notion.site/2cdf40a8ef4680a2ae6eca51ca57e0b8?v=2cdf40a8ef46809e8b17000c120960b6&source=copy_link"
+    width="100%"
+    height="500"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</section>
 
 </section>
 
