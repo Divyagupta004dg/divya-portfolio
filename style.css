@@ -74,7 +74,6 @@ section {
 }
 
 /* ================= HOME ================= */
-
 .home {
     display: flex;
     align-items: center;
@@ -83,7 +82,6 @@ section {
     background: var(--bg-color);
 }
 
-/* ===== LEFT CONTENT ===== */
 .home-content {
     max-width: 60rem;
 }
@@ -98,42 +96,36 @@ section {
     color: var(--main-color);
 }
 
-/* ===== TYPING TEXT (NEW SYSTEM) ===== */
-.typing-wrapper {
+.text-animate h3 {
     font-size: 3.2rem;
     font-weight: 700;
-    margin: 1rem 0 2rem;
+}
+
+.multiple-text {
     color: var(--main-color);
-    display: flex;
-    align-items: center;
 }
 
-#typing-text {
-    white-space: nowrap;
-}
-
-.cursor {
+.multiple-text::after {
+    content: '|';
     margin-left: 6px;
     animation: blink 1s infinite;
 }
 
-/* cursor blink */
 @keyframes blink {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0; }
 }
 
-/* ===== PARAGRAPH ===== */
 .home-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTONS (STABLE) ===== */
 .btn-box {
     display: flex;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem;   /* 🔒 LOCKS ICON POSITION */
 }
 
 .btn-box .btn {
@@ -149,12 +141,14 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: .4s;
+    transition: .5s;
+}
+/* ===== BUTTON ANIMATION (RESTORED) ===== */
+.btn-box .btn {
     position: relative;
     overflow: hidden;
 }
 
-/* hover animation */
 .btn-box .btn::before {
     content: '';
     position: absolute;
@@ -174,16 +168,15 @@ section {
     color: var(--main-color);
 }
 
-/* outline button */
-.btn-box .btn.btn-outline {
+.btn-box .btn:nth-child(2) {
     background: transparent;
     color: var(--main-color);
 }
 
-.btn-box .btn.btn-outline:hover {
+.btn-box .btn:nth-child(2):hover {
     background: var(--main-color);
     color: var(--bg-color);
-}
+} 
 
 /* ===== SOCIAL ICONS (ORIGINAL POSITION – BELOW) ===== */
 .home-sci {
@@ -217,11 +210,15 @@ section {
 }
 
 /* ===== HOME IMAGE ===== */
-.home-image img {
-    width: 320px;
-    border-radius: 18px;
-    object-fit: cover;
+.home-image {
+    flex-shrink: 0;
 }
+
+.home-image img {
+    width: 32rem;
+    max-width: 100%;
+}
+
 
 /* ================= ABOUT ================= */
 .about {

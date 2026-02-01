@@ -12,9 +12,11 @@ if (menuIcon && navbar) {
 }
 
 /* ================= TYPING EFFECT (FIXED) ================= */
-const textElement = document.getElementById('typing-text');
+/* ================= TYPING EFFECT (FIXED) ================= */
 
-const texts = [
+const typingText = document.getElementById("typing-text");
+
+const roles = [
   "VLSI & Semiconductor Student",
   "RTL Design Engineer",
   "RISC-V Enthusiast",
@@ -22,39 +24,33 @@ const texts = [
   "Open-Source Silicon Explorer"
 ];
 
-let textIndex = 0;
+let roleIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
 
-function typeEffect() {
-  if (!textElement) return;
+function typeRole() {
+  if (!typingText) return;
 
-  const currentText = texts[textIndex];
-
-  if (!isDeleting) {
-    textElement.textContent = currentText.substring(0, charIndex + 1);
+  if (charIndex < roles[roleIndex].length) {
+    typingText.textContent += roles[roleIndex].charAt(charIndex);
     charIndex++;
+    setTimeout(typeRole, 90);
   } else {
-    textElement.textContent = currentText.substring(0, charIndex - 1);
-    charIndex--;
+    setTimeout(eraseRole, 1200);
   }
-
-  let speed = isDeleting ? 50 : 90;
-
-  if (!isDeleting && charIndex === currentText.length) {
-    speed = 1500;          // pause after full text
-    isDeleting = true;
-  } 
-  else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % texts.length;
-    speed = 400;           // pause before next text
-  }
-
-  setTimeout(typeEffect, speed);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+function eraseRole() {
+  if (charIndex > 0) {
+    typingText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseRole, 50);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeRole, 500);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", typeRole);
 
 /* ================= FLIP CARD ================= */
 function flipCard(el) {
