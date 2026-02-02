@@ -1171,21 +1171,10 @@ section {
     background: #020617;
 }
 
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background: #020617;
-  font-family: monospace;
-  overflow-x: hidden;
-}
 
 /* ================= VLSI BACKGROUND ================= */
-
+/*
 #vlsi-background {
   position: relative;
   width: 100vw;
@@ -1219,7 +1208,7 @@ body {
   pointer-events: none;
 }
 
-
+*/
 /* ================= GRADIENT ORBS ================= */
 
 .gradient-orb {
