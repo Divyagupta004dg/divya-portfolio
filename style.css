@@ -27,7 +27,10 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
+  position: relative;
 }
+
+
 
 
 
@@ -1179,10 +1182,12 @@ section {
 
 /* ================= VLSI BACKGROUND ================= */
 
+/* ================= VLSI BACKGROUND ================= */
+
 #vlsi-background {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;              /* ✅ FIX 1 */
+  min-height: 100vh;        /* ✅ FIX 2 */
   background: radial-gradient(
     ellipse at top,
     #0b1220 0%,
@@ -1190,6 +1195,7 @@ section {
   );
   overflow: hidden;
 }
+
 #vlsi-background::before {
   content: "";
   position: absolute;
