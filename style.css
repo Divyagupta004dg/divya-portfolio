@@ -23,13 +23,13 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
-
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
-    position: relative;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
+
+
+
 
 /* ================= HEADER ================= */
 .header {
@@ -1176,7 +1176,7 @@ section {
 
 
 /* ================= VLSI BACKGROUND ================= */
-/*
+
 #vlsi-background {
   position: relative;
   width: 100vw;
@@ -1210,7 +1210,7 @@ section {
   pointer-events: none;
 }
 
-*/
+
 /* ================= GRADIENT ORBS ================= */
 
 .gradient-orb {
