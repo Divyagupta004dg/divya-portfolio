@@ -1435,9 +1435,3 @@ svg {
   filter: blur(35px);
 }
 
-/* ================= CONTENT ABOVE BACKGROUND ================= */
-section,
-header {
-  position: relative;
-  z-index: 2;
-}
