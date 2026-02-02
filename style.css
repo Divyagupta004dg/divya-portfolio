@@ -31,7 +31,7 @@ body {
 }
 
 /* Ensure content stays above global background */
-body > * {
+body > *:not(#vlsi-background) {
   position: relative;
   z-index: 1;
 }
@@ -1335,4 +1335,35 @@ svg {
   }
 }
 
+/* ================= PROJECTS FIX ================= */
+
+.projects-bg {
+  position: relative;
+  padding: 10rem 9%;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
