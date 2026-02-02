@@ -205,3 +205,17 @@ function animateParticles() {
 
   requestAnimationFrame(animateParticles);
 }
+/* ================= CURSOR GLOW EFFECT ================= */
+
+const glowLarge = document.getElementById("mouse-glow-large");
+const glowSmall = document.getElementById("mouse-glow-small");
+
+if (glowLarge && glowSmall) {
+  document.addEventListener("mousemove", (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    glowLarge.style.transform = `translate(${x - 250}px, ${y - 250}px)`;
+    glowSmall.style.transform = `translate(${x - 150}px, ${y - 150}px)`;
+  });
+}
