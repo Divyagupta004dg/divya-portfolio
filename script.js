@@ -219,3 +219,7 @@ if (glowLarge && glowSmall) {
     glowSmall.style.transform = `translate(${x - 150}px, ${y - 150}px)`;
   });
 }
+console.log(
+  document.getElementById("mouse-glow-large"),
+  document.getElementById("mouse-glow-small")
+);
