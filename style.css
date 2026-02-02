@@ -30,11 +30,6 @@ body {
     position: relative;
 }
 
-/* Ensure content stays above global background */
-body > *:not(#vlsi-background) {
-  position: relative;
-  z-index: 1;
-}
 
 
 
@@ -616,6 +611,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
+    align-items: stretch; /* ✅ ADD THIS */
 }
 
 /* FLIP CARD */
@@ -1187,17 +1183,6 @@ section {
 
 /* ================= VLSI BACKGROUND ================= */
 
-#vlsi-background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    ellipse at top,
-    #0b1220 0%,
-    #020617 70%
-  );
-  overflow: hidden;
-}
 
 /* ================= GRADIENT ORBS ================= */
 
@@ -1344,6 +1329,44 @@ svg {
   75% {
     transform: translate(4px, -10px) rotate(1deg);
   }
+}
+
+.projects-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at top,
+    #0b1220 0%,
+    #020617 70%
+  );
+}
+
+.projects-bg-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(34,197,94,0.04) 0,
+      rgba(34,197,94,0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(34,197,94,0.03) 0,
+      rgba(34,197,94,0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  pointer-events: none;
 }
 
 
