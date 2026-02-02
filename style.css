@@ -24,14 +24,17 @@ html {
     overflow-x: hidden;
 }
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  overflow-x: hidden;
-  position: relative;
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
 }
 
-
-
+/* Ensure content stays above global background */
+body > * {
+  position: relative;
+  z-index: 1;
+}
 
 
 
@@ -1184,17 +1187,19 @@ section {
 
 /* ================= VLSI BACKGROUND ================= */
 
+/* ================= GLOBAL VLSI BACKGROUND ================= */
 #vlsi-background {
-  position: relative;
-  width: 100%;              /* ✅ FIX 1 */
-  min-height: 100vh;        /* ✅ FIX 2 */
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* 🔑 THIS WAS MISSING */
   background: radial-gradient(
     ellipse at top,
     #0b1220 0%,
-    #020617 75%
+    #020617 70%
   );
   overflow: hidden;
 }
+
 
 #vlsi-background::before {
   content: "";
@@ -1203,21 +1208,20 @@ section {
   background-image:
     repeating-linear-gradient(
       90deg,
-      rgba(34,197,94,0.03) 0,
-      rgba(34,197,94,0.03) 1px,
+      rgba(34,197,94,0.04) 0,
+      rgba(34,197,94,0.04) 1px,
       transparent 1px,
       transparent 80px
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(34,197,94,0.02) 0,
-      rgba(34,197,94,0.02) 1px,
+      rgba(34,197,94,0.03) 0,
+      rgba(34,197,94,0.03) 1px,
       transparent 1px,
       transparent 80px
     );
   pointer-events: none;
 }
-
 
 /* ================= GRADIENT ORBS ================= */
 
