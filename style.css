@@ -1187,41 +1187,6 @@ section {
 
 /* ================= VLSI BACKGROUND ================= */
 
-/* ================= GLOBAL VLSI BACKGROUND ================= */
-#vlsi-background {
-  position: fixed;
-  inset: 0;
-  z-index: -1; /* 🔑 THIS WAS MISSING */
-  background: radial-gradient(
-    ellipse at top,
-    #0b1220 0%,
-    #020617 70%
-  );
-  overflow: hidden;
-}
-
-
-#vlsi-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      rgba(34,197,94,0.04) 0,
-      rgba(34,197,94,0.04) 1px,
-      transparent 1px,
-      transparent 80px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(34,197,94,0.03) 0,
-      rgba(34,197,94,0.03) 1px,
-      transparent 1px,
-      transparent 80px
-    );
-  pointer-events: none;
-}
 
 /* ================= GRADIENT ORBS ================= */
 
