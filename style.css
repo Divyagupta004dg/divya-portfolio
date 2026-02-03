@@ -614,7 +614,6 @@ section {
     align-items: stretch; /* ✅ ADD THIS */
 }
 
-
 /* FLIP CARD */
 
 .flip-card {
@@ -924,12 +923,14 @@ section {
   transition: transform 0.4s ease;
 }
 /* ===== FLIP CARD BASE ===== */
-/*.flip-card {
-    width: 300px;
-    height: 300px;
+
+.flip-card {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
     perspective: 1200px;
-    cursor: pointer;
-}*/
+}
+
 .flip-card {
   width: 100%;
   max-width: 320px;
