@@ -223,3 +223,14 @@ console.log(
   document.getElementById("mouse-glow-large"),
   document.getElementById("mouse-glow-small")
 );
+function flipCard(el) {
+  const card = el.closest('.flip-card');
+  card.classList.add('flipped');
+  card.classList.add('glow');
+}
+
+function flipBack(el) {
+  const card = el.closest('.flip-card');
+  card.classList.remove('flipped');
+  card.classList.remove('glow');
+}
