@@ -78,53 +78,52 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-/* ================= HOME BACKGROUND LAYER ================= */
-
+/* ================= HOME ================= */
 .home {
-    position: relative;          /* 🔑 important */
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    background: var(--bg-color);
 }
 
-.home::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 120px 120px;
-    pointer-events: none;
-    z-index: 0;
+.home-content {
+    max-width: 60rem;
 }
 
-/* animated gradient layer */
-.home::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    background:
-        radial-gradient(circle at 15% 25%, rgba(59,130,246,0.35), transparent 40%),
-        radial-gradient(circle at 85% 70%, rgba(147,51,234,0.35), transparent 45%),
-        linear-gradient(180deg, #020617, #020617);
-
-    animation: homeBgMove 14s ease-in-out infinite alternate;
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-/* subtle motion */
-@keyframes homeBgMove {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-50px, -30px);
-    }
+.home-content h1 span {
+    color: var(--main-color);
 }
 
-/* keep text & image ABOVE background */
-.home > * {
-    position: relative;
-    z-index: 1;
+.text-animate h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.multiple-text {
+    color: var(--main-color);
+}
+
+.multiple-text::after {
+    content: '|';
+    margin-left: 6px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
 }
 
 /* ===== BUTTONS (STABLE) ===== */
