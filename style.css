@@ -1368,16 +1368,41 @@ svg {
   pointer-events: none;
 }
 /* ================= GLOBAL BACKGROUND ================= */
+/* ===== GLOBAL HOMEPAGE BACKGROUND ===== */
 #vlsi-background {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(
-    ellipse at top,
-    #0b1220 0%,
-    #020617 70%
-  );
+  background:
+    radial-gradient(circle at 15% 25%, rgba(56,189,248,0.18), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(168,85,247,0.18), transparent 45%),
+    linear-gradient(180deg, #020617 0%, #081b29 100%);
+  overflow: hidden;
 }
+
+/* subtle VLSI grid */
+#vlsi-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(34,197,94,0.04) 0,
+      rgba(34,197,94,0.04) 1px,
+      transparent 1px,
+      transparent 90px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(34,197,94,0.03) 0,
+      rgba(34,197,94,0.03) 1px,
+      transparent 1px,
+      transparent 90px
+    );
+  pointer-events: none;
+}
+
 
 /* Make sure all content stays above background */
 body > * {
