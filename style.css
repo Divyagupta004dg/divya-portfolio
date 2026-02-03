@@ -1099,11 +1099,11 @@ section {
 }
 
 /* Grid */
-.progress-grid {
+
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 7rem;
-    margin-bottom: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
 }
 
 /* Cards */
